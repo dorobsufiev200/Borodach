@@ -1,0 +1,91 @@
+/* ==========================================================================
+   BORODACH — animations.css
+   Scroll reveals, the signature "cut" reveal, hover motion, modal/toast.
+   Respects prefers-reduced-motion throughout.
+   ========================================================================== */
+
+@keyframes cutReveal {
+  from { width: 0%; }
+  to   { width: 100%; }
+}
+
+@keyframes scrollPulse {
+  0%   { transform: scaleY(0.3); opacity: 0.3; transform-origin: top; }
+  50%  { transform: scaleY(1);   opacity: 1;   transform-origin: top; }
+  100% { transform: scaleY(0.3); opacity: 0.3; transform-origin: bottom; }
+}
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-6px); }
+}
+
+@keyframes pulseRing {
+  0%   { box-shadow: 0 0 0 0 rgba(176,141,87,0.45); }
+  70%  { box-shadow: 0 0 0 12px rgba(176,141,87,0); }
+  100% { box-shadow: 0 0 0 0 rgba(176,141,87,0); }
+}
+
+/* ---- Scroll reveal ---- */
+
+.reveal-up {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .8s var(--ease), transform .8s var(--ease);
+  transition-delay: calc(var(--reveal-delay, 0) * 90ms);
+}
+.reveal-up.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* delay steps read from data-delay attribute via JS setting --reveal-delay inline;
+   fallback classes kept for safety */
+[data-delay="1"] { --reveal-delay: 1; }
+[data-delay="2"] { --reveal-delay: 2; }
+[data-delay="3"] { --reveal-delay: 3; }
+[data-delay="4"] { --reveal-delay: 4; }
+[data-delay="5"] { --reveal-delay: 5; }
+
+/* ---- Hero entrance (plays once on load, independent from scroll observer) ---- */
+
+.hero .reveal-up {
+  transition-delay: calc(var(--reveal-delay, 0) * 120ms);
+}
+
+/* ---- Master / advantage / gallery hover lifts already declared in style.css;
+   here we add subtle ambient motion for icons ---- */
+
+.advantage-icon { display: inline-block; animation: floatY 4.5s ease-in-out infinite; }
+.advantage-card:nth-child(2) .advantage-icon { animation-delay: .4s; }
+.advantage-card:nth-child(3) .advantage-icon { animation-delay: .8s; }
+.advantage-card:nth-child(4) .advantage-icon { animation-delay: 1.2s; }
+
+/* ---- Booking master pick selection pulse ---- */
+.booking-master-pick.selected img,
+.booking-master-pick.selected .booking-master-any {
+  animation: pulseRing 1.2s ease-out 1;
+}
+
+/* ---- Nav underline handled in style.css via transform ---- */
+
+/* ---- Reduced motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal-up {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .hero-title::after { animation: none; width: 100%; }
+  .hero-scroll-line { animation: none; }
+  .advantage-icon { animation: none; }
+  .booking-master-pick.selected img,
+  .booking-master-pick.selected .booking-master-any { animation: none; }
+  * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}
