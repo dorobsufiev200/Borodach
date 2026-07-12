@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>BORODACH — Премиальный барбершоп в Тольятти | Стрижки, борода, уход</title>
+<meta name="description" content="BORODACH — премиальный мужской барбершоп в Тольятти. Стрижки, оформление бороды, барбер-услуги высшего класса. Онлайн-запись за 30 секунд. Рейтинг 4.9, 10 лет опыта.">
+<meta name="keywords" content="барбершоп Тольятти, мужская стрижка, борода, барбер, стрижка бороды, BORODACH">
+
+<!-- Open Graph -->
+<meta property="og:title" content="BORODACH — Премиальный барбершоп в Тольятти">
+<meta property="og:description" content="Мужские стрижки и уход за бородой на уровне мировых барбершопов. Записывайтесь онлайн.">
+<meta property="og:type" content="business.business">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:image" content="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=1200&q=80">
+<meta property="og:url" content="https://borodach-tlt.ru/">
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230D0C0B%22/><text x=%2250%22 y=%2266%22 font-size=%2258%22 text-anchor=%22middle%22 fill=%22%23B08D57%22 font-family=%22serif%22>B</text></svg>">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink: '#0D0C0B',
+          charcoal: '#17140F',
+          charcoal2: '#1F1B15',
+          bone: '#F3EEE3',
+          bonedim: '#E7DFCF',
+          brass: '#B08D57',
+          brasslight: '#D4B27F',
+          green: '#2F4F3D',
+          ink1: '#111111',
+          ink2: '#555555',
+        },
+        fontFamily: {
+          display: ['Fraunces', 'serif'],
+          body: ['Inter', 'sans-serif'],
+          mono: ['IBM Plex Mono', 'monospace'],
+        },
+      }
+    }
+  }
+</script>
+
+<!-- LocalBusiness Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HairSalon",
+  "name": "BORODACH",
+  "image": "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=1200&q=80",
+  "@id": "https://borodach-tlt.ru/",
+  "url": "https://borodach-tlt.ru/",
+  "telephone": "+7-900-000-00-00",
+  "priceRange": "₽₽",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "ул. Мира, 150",
+    "addressLocality": "Тольятти",
+    "addressRegion": "Самарская область",
+    "postalCode": "445000",
+    "addressCountry": "RU"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 53.5303,
+    "longitude": 49.3461
+  },
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "09:00",
+    "closes": "21:00"
+  }],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "500"
+  }
+}
+</script>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="bg-ink text-bone font-body antialiased">
+
+<!-- ============ CUSTOM CURSOR BLADE LINE (signature) ============ -->
+<div class="cut-progress" id="cutProgress" aria-hidden="true"></div>
+
+<!-- ============ NAV ============ -->
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a href="#hero" class="logo">
+      <span class="logo-mark">✂</span>
+      <span class="logo-text">BORODACH</span>
+    </a>
+    <nav class="main-nav" id="mainNav">
+      <a href="#masters">Мастера</a>
+      <a href="#services">Услуги</a>
+      <a href="#gallery">Работы</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#faq">Вопросы</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <div class="header-actions">
+      <a href="tel:+79000000000" class="phone-link">+7 900 000-00-00</a>
+      <button class="btn btn-brass" id="navBookBtn">Записаться</button>
+    </div>
+    <button class="burger" id="burgerBtn" aria-label="Меню">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#masters">Мастера</a>
+    <a href="#services">Услуги</a>
+    <a href="#gallery">Работы</a>
+    <a href="#reviews">Отзывы</a>
+    <a href="#faq">Вопросы</a>
+    <a href="#contacts">Контакты</a>
+    <a href="tel:+79000000000">+7 900 000-00-00</a>
+    <button class="btn btn-brass w-full" id="mobileBookBtn">Записаться</button>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section id="hero" class="hero">
+  <div class="hero-bg">
+    <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=1600&q=80" alt="Барбершоп BORODACH — интерьер" class="hero-bg-img">
+    <div class="hero-bg-overlay"></div>
+  </div>
+
+  <div class="hero-inner">
+    <div class="eyebrow reveal-up">
+      <span class="eyebrow-line"></span>
+      Мужской барбершоп · Тольятти
+    </div>
+
+    <h1 class="hero-title reveal-up" data-delay="1">
+      BORODACH <span class="hero-scissors">✂️</span>
+    </h1>
+
+    <p class="hero-sub reveal-up" data-delay="2">
+      Премиальный мужской барбершоп в Тольятти.<br>
+      Точная работа с формой. Уважение к деталям.
+    </p>
+
+    <div class="hero-stats reveal-up" data-delay="3">
+      <div class="hero-stat">
+        <span class="hero-stat-num">4.9</span>
+        <span class="hero-stat-label">★ рейтинг</span>
+      </div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">500+</span>
+        <span class="hero-stat-label">клиентов</span>
+      </div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">10</span>
+        <span class="hero-stat-label">лет опыта</span>
+      </div>
+    </div>
+
+    <div class="hero-meta reveal-up" data-delay="4">
+      <span class="hero-meta-item">📍 ул. Мира, 150</span>
+      <span class="hero-meta-item">🕘 09:00–21:00 ежедневно</span>
+    </div>
+
+    <div class="hero-actions reveal-up" data-delay="5">
+      <button class="btn btn-brass btn-lg" id="heroBookBtn">Записаться</button>
+      <a href="#gallery" class="btn btn-ghost btn-lg">Наши работы</a>
+    </div>
+  </div>
+
+  <a href="#advantages" class="hero-scroll-hint" aria-label="Листать вниз">
+    <span class="hero-scroll-line"></span>
+  </a>
+</section>
+
+<!-- ============ ADVANTAGES ============ -->
+<section id="advantages" class="section section-light">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">Почему мы</span>
+      <h2 class="section-title">Ремесло, доведённое до точности</h2>
+    </div>
+
+    <div class="advantages-grid">
+      <div class="advantage-card reveal-up">
+        <div class="advantage-icon">🪒</div>
+        <h3>Классическая техника</h3>
+        <p>Опасная бритва, горячее полотенце, ручная доводка контура — как в старых барбершопах, но с современной гигиеной.</p>
+      </div>
+      <div class="advantage-card reveal-up" data-delay="1">
+        <div class="advantage-icon">🎓</div>
+        <h3>Аттестованные мастера</h3>
+        <p>Каждый барбер проходит стажировку от 2 лет и регулярно повышает квалификацию на профильных чемпионатах.</p>
+      </div>
+      <div class="advantage-card reveal-up" data-delay="2">
+        <div class="advantage-icon">🧴</div>
+        <h3>Премиальная косметика</h3>
+        <p>Используем профессиональные линейки для бороды и волос — без силиконов и агрессивных сульфатов.</p>
+      </div>
+      <div class="advantage-card reveal-up" data-delay="3">
+        <div class="advantage-icon">⏱</div>
+        <h3>Без опозданий</h3>
+        <p>Запись по времени, без очередей. Мастер освобождается точно к вашему визиту.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MASTERS ============ -->
+<section id="masters" class="section section-dark">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">Команда</span>
+      <h2 class="section-title">Мастера</h2>
+      <p class="section-desc">Каждый барбер BORODACH — это своя манера и своя специализация. Выбирайте под задачу.</p>
+    </div>
+
+    <div class="masters-grid" id="mastersGrid">
+      <!-- filled by JS from app.js, static fallback below -->
+      <article class="master-card reveal-up" data-master="Алекс">
+        <div class="master-photo">
+          <img src="https://images.unsplash.com/photo-1618077360395-f3068be8e001?w=600&q=80" alt="Барбер Алекс">
+        </div>
+        <div class="master-info">
+          <h3>Алекс</h3>
+          <span class="master-spec">Fade &amp; Design</span>
+          <div class="master-meta">
+            <span class="master-rating">★★★★★ 4.9</span>
+            <span class="master-exp">10 лет опыта</span>
+          </div>
+          <p class="master-reviews">126 отзывов</p>
+        </div>
+      </article>
+
+      <article class="master-card reveal-up" data-delay="1" data-master="Ахмед">
+        <div class="master-photo">
+          <img src="https://images.unsplash.com/photo-1512690459411-b9245aed614b?w=600&q=80" alt="Барбер Ахмед">
+        </div>
+        <div class="master-info">
+          <h3>Ахмед</h3>
+          <span class="master-spec">Beard Expert</span>
+          <div class="master-meta">
+            <span class="master-rating">★★★★★ 5.0</span>
+            <span class="master-exp">8 лет опыта</span>
+          </div>
+          <p class="master-reviews">98 отзывов</p>
+        </div>
+      </article>
+
+      <article class="master-card reveal-up" data-delay="2" data-master="Игорь">
+        <div class="master-photo">
+          <img src="https://images.unsplash.com/photo-1560869713-7d0a29430803?w=600&q=80" alt="Барбер Игорь">
+        </div>
+        <div class="master-info">
+          <h3>Игорь</h3>
+          <span class="master-spec">Классика &amp; Опасная бритва</span>
+          <div class="master-meta">
+            <span class="master-rating">★★★★★ 4.8</span>
+            <span class="master-exp">12 лет опыта</span>
+          </div>
+          <p class="master-reviews">154 отзыва</p>
+        </div>
+      </article>
+
+      <article class="master-card reveal-up" data-delay="3" data-master="Дмитрий">
+        <div class="master-photo">
+          <img src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=600&q=80" alt="Барбер Дмитрий">
+        </div>
+        <div class="master-info">
+          <h3>Дмитрий</h3>
+          <span class="master-spec">Современные стрижки</span>
+          <div class="master-meta">
+            <span class="master-rating">★★★★★ 4.9</span>
+            <span class="master-exp">6 лет опыта</span>
+          </div>
+          <p class="master-reviews">83 отзыва</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section id="services" class="section section-light">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">Прайс</span>
+      <h2 class="section-title">Услуги</h2>
+      <p class="section-desc">Отметьте нужные услуги — стоимость и время посчитаются автоматически и перенесутся в форму записи.</p>
+    </div>
+
+    <div class="services-grid" id="servicesGrid">
+      <!-- Populated statically; booking.js reads these via data attributes -->
+      <label class="service-card reveal-up">
+        <input type="checkbox" class="service-check" data-name="Мужская стрижка" data-price="1500" data-duration="45">
+        <div class="service-card-body">
+          <div class="service-card-top">
+            <h3>Мужская стрижка</h3>
+            <span class="service-check-mark">✓</span>
+          </div>
+          <p class="service-desc">Стрижка с учётом формы лица, мытьё, укладка.</p>
+          <div class="service-meta">
+            <span class="service-time">⏱ 45 мин</span>
+            <span class="service-price">1 500 ₽</span>
+          </div>
+        </div>
+      </label>
+
+      <label class="service-card reveal-up" data-delay="1">
+        <input type="checkbox" class="service-check" data-name="Оформление бороды" data-price="1000" data-duration="30">
+        <div class="service-card-body">
+          <div class="service-card-top">
+            <h3>Оформление бороды</h3>
+            <span class="service-check-mark">✓</span>
+          </div>
+          <p class="service-desc">Коррекция формы, работа с опасной бритвой, уход.</p>
+          <div class="service-meta">
+            <span class="service-time">⏱ 30 мин</span>
+            <span class="service-price">1 000 ₽</span>
+          </div>
+        </div>
+      </label>
+
+      <label class="service-card reveal-up" data-delay="2">
+        <input type="checkbox" class="service-check" data-name="Комплекс" data-price="2200" data-duration="80">
+        <div class="service-card-body">
+          <div class="service-card-top">
+            <h3>Комплекс</h3>
+            <span class="service-check-mark">✓</span>
+          </div>
+          <p class="service-desc">Стрижка + борода в одну запись. Выгоднее по цене.</p>
+          <div class="service-meta">
+            <span class="service-time">⏱ 80 мин</span>
+            <span class="service-price">2 200 ₽</span>
+          </div>
+        </div>
+      </label>
+
+      <label class="service-card reveal-up" data-delay="3">
+        <input type="checkbox" class="service-check" data-name="Горячее бритьё" data-price="1200" data-duration="40">
+        <div class="service-card-body">
+          <div class="service-card-top">
+            <h3>Горячее бритьё</h3>
+            <span class="service-check-mark">✓</span>
+          </div>
+          <p class="service-desc">Классическое бритьё опасной бритвой с горячим полотенцем.</p>
+          <div class="service-meta">
+            <span class="service-time">⏱ 40 мин</span>
+            <span class="service-price">1 200 ₽</span>
+          </div>
+        </div>
+      </label>
+
+      <label class="service-card reveal-up" data-delay="4">
+        <input type="checkbox" class="service-check" data-name="Камуфляж седины" data-price="900" data-duration="20">
+        <div class="service-card-body">
+          <div class="service-card-top">
+            <h3>Камуфляж седины</h3>
+            <span class="service-check-mark">✓</span>
+          </div>
+          <p class="service-desc">Тонирование бороды и висков в натуральный тон.</p>
+          <div class="service-meta">
+            <span class="service-time">⏱ 20 мин</span>
+            <span class="service-price">900 ₽</span>
+          </div>
+        </div>
+      </label>
+
+      <label class="service-card reveal-up" data-delay="5">
+        <input type="checkbox" class="service-check" data-name="Детская стрижка" data-price="1000" data-duration="30">
+        <div class="service-card-body">
+          <div class="service-card-top">
+            <h3>Детская стрижка</h3>
+            <span class="service-check-mark">✓</span>
+          </div>
+          <p class="service-desc">До 12 лет, в спокойном темпе, с мультфильмом на экране.</p>
+          <div class="service-meta">
+            <span class="service-time">⏱ 30 мин</span>
+            <span class="service-price">1 000 ₽</span>
+          </div>
+        </div>
+      </label>
+    </div>
+
+    <div class="services-total-bar" id="servicesTotalBar">
+      <div class="services-total-info">
+        <span id="servicesTotalCount">Услуги не выбраны</span>
+        <span class="services-total-time" id="servicesTotalTime"></span>
+      </div>
+      <div class="services-total-right">
+        <span class="services-total-price" id="servicesTotalPrice">0 ₽</span>
+        <button class="btn btn-brass" id="servicesToBookingBtn">Записаться</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section id="gallery" class="section section-dark">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">Портфолио</span>
+      <h2 class="section-title">Галерея работ</h2>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item reveal-up gallery-tall">
+        <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=700&q=80" alt="Работа барбера — стрижка фейд">
+      </div>
+      <div class="gallery-item reveal-up" data-delay="1">
+        <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=700&q=80" alt="Работа барбера — оформление бороды">
+      </div>
+      <div class="gallery-item reveal-up" data-delay="2">
+        <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=700&q=80" alt="Работа барбера — классическая стрижка">
+      </div>
+      <div class="gallery-item reveal-up" data-delay="3">
+        <img src="https://images.unsplash.com/photo-1622287162716-f311baa1a2b8?w=700&q=80" alt="Работа барбера — укладка">
+      </div>
+      <div class="gallery-item reveal-up gallery-tall" data-delay="4">
+        <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=700&q=80" alt="Работа барбера — горячее бритьё">
+      </div>
+      <div class="gallery-item reveal-up" data-delay="5">
+        <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=700&q=80" alt="Интерьер барбершопа BORODACH">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section id="reviews" class="section section-light">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">Клиенты</span>
+      <h2 class="section-title">Отзывы</h2>
+    </div>
+
+    <div class="reviews-track-wrap">
+      <div class="reviews-track" id="reviewsTrack">
+        <article class="review-card reveal-up">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Хожу к Игорю уже второй год — единственный мастер, который слышит с первого раза, что нужно сделать с формой. Атмосфера в зале тоже на высоте.</p>
+          <div class="review-author">
+            <span class="review-name">Сергей М.</span>
+            <span class="review-date">3 недели назад</span>
+          </div>
+        </article>
+        <article class="review-card reveal-up" data-delay="1">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Записался онлайн за минуту, приняли точно по времени. Борода после Ахмеда выглядит так, будто у меня всегда была такая форма.</p>
+          <div class="review-author">
+            <span class="review-name">Роман К.</span>
+            <span class="review-date">1 месяц назад</span>
+          </div>
+        </article>
+        <article class="review-card reveal-up" data-delay="2">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Горячее бритьё — отдельный вид удовольствия. Полотенца, аромат, тишина. Вышел другим человеком.</p>
+          <div class="review-author">
+            <span class="review-name">Владислав Т.</span>
+            <span class="review-date">1 месяц назад</span>
+          </div>
+        </article>
+        <article class="review-card reveal-up" data-delay="3">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Приводил сына на первую взрослую стрижку — мастер нашёл подход, никакой истерики. Теперь ходим вдвоём.</p>
+          <div class="review-author">
+            <span class="review-name">Артём Б.</span>
+            <span class="review-date">2 месяца назад</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BOOKING ============ -->
+<section id="booking" class="section section-dark booking-section">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">Запись</span>
+      <h2 class="section-title">Онлайн-запись</h2>
+      <p class="section-desc">Пять шагов, меньше минуты. Мы подтвердим запись по телефону.</p>
+    </div>
+
+    <div class="booking-widget">
+      <!-- Steps indicator -->
+      <div class="booking-steps" id="bookingSteps">
+        <div class="booking-step active" data-step="1"><span>1</span>Мастер</div>
+        <div class="booking-step-line"></div>
+        <div class="booking-step" data-step="2"><span>2</span>Услуги</div>
+        <div class="booking-step-line"></div>
+        <div class="booking-step" data-step="3"><span>3</span>Дата</div>
+        <div class="booking-step-line"></div>
+        <div class="booking-step" data-step="4"><span>4</span>Время</div>
+        <div class="booking-step-line"></div>
+        <div class="booking-step" data-step="5"><span>5</span>Контакты</div>
+      </div>
+
+      <div class="booking-panels">
+
+        <!-- Step 1: master -->
+        <div class="booking-panel active" data-panel="1">
+          <h3 class="booking-panel-title">Выберите мастера</h3>
+          <div class="booking-masters" id="bookingMasters">
+            <button class="booking-master-pick" data-master="Алекс">
+              <img src="https://images.unsplash.com/photo-1618077360395-f3068be8e001?w=200&q=80" alt="Алекс">
+              <span>Алекс</span>
+              <small>Fade &amp; Design</small>
+            </button>
+            <button class="booking-master-pick" data-master="Ахмед">
+              <img src="https://images.unsplash.com/photo-1512690459411-b9245aed614b?w=200&q=80" alt="Ахмед">
+              <span>Ахмед</span>
+              <small>Beard Expert</small>
+            </button>
+            <button class="booking-master-pick" data-master="Игорь">
+              <img src="https://images.unsplash.com/photo-1560869713-7d0a29430803?w=200&q=80" alt="Игорь">
+              <span>Игорь</span>
+              <small>Классика</small>
+            </button>
+            <button class="booking-master-pick" data-master="Дмитрий">
+              <img src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=200&q=80" alt="Дмитрий">
+              <span>Дмитрий</span>
+              <small>Современные стрижки</small>
+            </button>
+            <button class="booking-master-pick" data-master="Любой мастер">
+              <div class="booking-master-any">🎲</div>
+              <span>Любой мастер</span>
+              <small>Ближайшее окно</small>
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 2: services -->
+        <div class="booking-panel" data-panel="2">
+          <h3 class="booking-panel-title">Выберите услуги</h3>
+          <div class="booking-services" id="bookingServices"></div>
+        </div>
+
+        <!-- Step 3: date -->
+        <div class="booking-panel" data-panel="3">
+          <h3 class="booking-panel-title">Выберите дату</h3>
+          <div class="calendar" id="calendar">
+            <div class="calendar-head">
+              <button class="calendar-nav" id="calPrev" aria-label="Предыдущий месяц">‹</button>
+              <span class="calendar-month" id="calMonthLabel"></span>
+              <button class="calendar-nav" id="calNext" aria-label="Следующий месяц">›</button>
+            </div>
+            <div class="calendar-weekdays">
+              <span>Пн</span><span>Вт</span><span>Ср</span><span>Чт</span><span>Пт</span><span>Сб</span><span>Вс</span>
+            </div>
+            <div class="calendar-grid" id="calendarGrid"></div>
+          </div>
+        </div>
+
+        <!-- Step 4: time -->
+        <div class="booking-panel" data-panel="4">
+          <h3 class="booking-panel-title">Выберите время</h3>
+          <p class="booking-selected-date" id="bookingSelectedDate"></p>
+          <div class="time-grid" id="timeGrid"></div>
+        </div>
+
+        <!-- Step 5: contacts -->
+        <div class="booking-panel" data-panel="5">
+          <h3 class="booking-panel-title">Ваши контакты</h3>
+          <form class="booking-form" id="bookingForm">
+            <label class="booking-field">
+              <span>Имя</span>
+              <input type="text" id="clientName" name="name" placeholder="Как к вам обращаться" required autocomplete="name">
+            </label>
+            <label class="booking-field">
+              <span>Телефон</span>
+              <input type="tel" id="clientPhone" name="phone" placeholder="+7 (___) ___-__-__" required autocomplete="tel">
+            </label>
+            <div class="booking-summary" id="bookingSummary"></div>
+          </form>
+        </div>
+
+      </div>
+
+      <div class="booking-footer">
+        <button class="btn btn-ghost" id="bookingBackBtn" disabled>Назад</button>
+        <button class="btn btn-brass" id="bookingNextBtn">Далее</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq" class="section section-light">
+  <div class="container container-narrow">
+    <div class="section-head">
+      <span class="section-eyebrow">Вопросы</span>
+      <h2 class="section-title">FAQ</h2>
+    </div>
+
+    <div class="faq-list" id="faqList">
+      <div class="faq-item">
+        <button class="faq-question">
+          Нужно ли приходить заранее?
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer"><p>Достаточно прийти за 5 минут до записи. Если опаздываете больше чем на 10 минут — предупредите по телефону, мы постараемся сдвинуть окно.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          Можно ли отменить или перенести запись?
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer"><p>Да, свяжитесь с нами по телефону минимум за 2 часа — перенесём на удобное время без вопросов.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          Нужна ли предоплата?
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer"><p>Нет. Оплата — наличными или картой в зале, после услуги. Онлайн-запись ни к чему не обязывает по деньгам.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          Стрижёте ли детей?
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer"><p>Да, принимаем детей от 5 лет — в спокойном темпе, с мультфильмами на экране.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          Есть ли парковка рядом?
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer"><p>Да, бесплатная парковка прямо у входа, на 12 машиномест.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MAP + CONTACTS ============ -->
+<section id="contacts" class="section section-dark">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">Как добраться</span>
+      <h2 class="section-title">Контакты</h2>
+    </div>
+
+    <div class="contacts-grid">
+      <div class="contacts-info reveal-up">
+        <div class="contact-row">
+          <span class="contact-label">Адрес</span>
+          <span class="contact-value">г. Тольятти, ул. Мира, 150</span>
+        </div>
+        <div class="contact-row">
+          <span class="contact-label">Время работы</span>
+          <span class="contact-value">Ежедневно, 09:00–21:00</span>
+        </div>
+        <div class="contact-row">
+          <span class="contact-label">Телефон</span>
+          <a class="contact-value contact-link" href="tel:+79000000000">+7 900 000-00-00</a>
+        </div>
+        <div class="contact-row">
+          <span class="contact-label">Почта</span>
+          <a class="contact-value contact-link" href="mailto:hello@borodach-tlt.ru">hello@borodach-tlt.ru</a>
+        </div>
+
+        <div class="social-row">
+          <a href="#" class="social-btn" aria-label="Telegram">✈️</a>
+          <a href="#" class="social-btn" aria-label="VK">VK</a>
+          <a href="#" class="social-btn" aria-label="WhatsApp">📱</a>
+          <a href="#" class="social-btn" aria-label="Instagram">📷</a>
+        </div>
+
+        <button class="btn btn-brass btn-lg" id="contactsBookBtn">Записаться</button>
+      </div>
+
+      <div class="map-frame reveal-up" data-delay="1">
+        <iframe
+          src="https://yandex.ru/map-widget/v1/?ll=49.3461%2C53.5303&z=15&pt=49.3461,53.5303,pm2rdm"
+          width="100%" height="100%" frameborder="0" loading="lazy"
+          title="Карта — BORODACH, ул. Мира, 150, Тольятти"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <div class="logo">
+        <span class="logo-mark">✂</span>
+        <span class="logo-text">BORODACH</span>
+      </div>
+      <p>Премиальный мужской барбершоп в Тольятти. Работаем с 2016 года.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Навигация</h4>
+      <a href="#masters">Мастера</a>
+      <a href="#services">Услуги</a>
+      <a href="#gallery">Работы</a>
+      <a href="#booking">Запись</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Информация</h4>
+      <a href="#faq">Вопросы</a>
+      <a href="#contacts">Контакты</a>
+      <a href="#reviews">Отзывы</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Связь</h4>
+      <a href="tel:+79000000000">+7 900 000-00-00</a>
+      <a href="mailto:hello@borodach-tlt.ru">hello@borodach-tlt.ru</a>
+      <span>ул. Мира, 150, Тольятти</span>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 BORODACH. Все права защищены.</span>
+    <span>Сделано с уважением к деталям.</span>
+  </div>
+</footer>
+
+<!-- ============ FLOATING BOOK BUTTON (mobile) ============ -->
+<button class="fab-book" id="fabBookBtn">Записаться</button>
+
+<!-- ============ BOOKING SUCCESS MODAL ============ -->
+<div class="modal-overlay" id="successModal">
+  <div class="modal success-modal">
+    <button class="modal-close" id="successCloseBtn" aria-label="Закрыть">×</button>
+    <div class="success-icon">✅</div>
+    <h3>Запись создана</h3>
+    <p class="success-thanks">Спасибо! Мы получили вашу заявку и скоро подтвердим её по телефону.</p>
+    <div class="success-details" id="successDetails"></div>
+    <div class="success-actions">
+      <a href="tel:+79000000000" class="btn btn-ghost">Позвонить</a>
+      <a href="https://yandex.ru/maps/?text=Тольятти%20ул.%20Мира%20150" target="_blank" rel="noopener" class="btn btn-brass">Маршрут</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ TOAST ============ -->
+<div class="toast" id="toast"></div>
+
+<script src="js/api.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/calendar.js"></script>
+<script src="js/booking.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
